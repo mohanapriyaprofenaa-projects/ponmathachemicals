@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Products | Ponmatha Chemicals – R BRITE, Aquasol, Plastisol, PTF &amp; Pigments</title>
+  <meta name="description" content="Browse the Ponmatha Chemicals product catalogue: R BRITE non-PVC water base, Aquasol, Creative discharge, oil base, phthalate-free (PTF) and plastisol inks, pigments and printing accessories.">
+  <meta name="keywords" content="R BRITE products, Aquasol, Creative discharge, PTF inks, plastisol inks, pigments, printing accessories, textile printing chemicals Tiruppur">
+  <meta name="theme-color" content="#2B4593">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Products | Ponmatha Chemicals">
+  <meta property="og:description" content="Eight product categories for textile printing – inks, bases, pigments and printing accessories.">
+  <meta property="og:image" content="assets/images/logo/ponmatha-logo.png">
+  <link rel="icon" type="image/png" href="assets/images/logo/ponmatha-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="js/whatsapp.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header id="site-header"></header>
+
+  <main id="main">
+
+    <!-- ===== Products hero (full-bleed photo, centred) ===== -->
+    <section class="ph ph-products" aria-labelledby="products-title">
+      <!-- IMAGE: Products hero – local path assets/images/products/products-hero.jpg -->
+      <div class="ph-bg img-slot" data-slot="assets/images/products/products-hero.jpg"><img src="assets/images/products/productrange.webp" alt=""></div>
+      <div class="container">
+        <p class="crumbs"><a href="index.html">Home</a> / Products</p>
+        <h1 id="products-title">Our Product Range</h1>
+        <span class="ph-rule"></span>
+        <p class="ph-lead">Eight product categories covering the everyday needs of textile printing &mdash; from water-based systems and specialty inks to pigments and printing accessories.</p>
+        <div class="glass-row">
+          <div><strong>100+</strong><span>Products Listed</span></div>
+          <div><strong>8</strong><span>Product Categories</span></div>
+          <div><strong>2-in-1</strong><span>Trading + Manufacturing</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Search + category filters ===== -->
+    <div class="catalogue-toolbar" id="catalogue-top">
+      <div class="container">
+        <div class="search-row">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <label for="product-search" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Search products by name</label>
+            <input id="product-search" type="search" placeholder="Search products by name, e.g. PTF GEL" autocomplete="off">
+          </div>
+          <button class="btn btn-outline btn-sm" type="button" id="clear-search" hidden>Clear Search</button>
+          <button class="btn btn-blue btn-sm show-all" type="button" id="show-all"><i class="fa-solid fa-border-all" aria-hidden="true"></i> Show All Products</button>
+        </div>
+        <div class="chips" id="category-chips" role="group" aria-label="Filter by product category"></div>
+        <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <!-- ===== Catalogue (rendered by js/products.js from the brochure data) ===== -->
+    <section class="section" aria-label="Product catalogue">
+      <div class="container">
+        <div id="catalogue"></div>
+
+        <div class="no-results" id="no-results" hidden>
+          <i class="fa-regular fa-face-frown-open" aria-hidden="true"></i>
+          <h3>No products found</h3>
+          <p>We couldn&rsquo;t find any product matching &ldquo;<span id="no-results-query"></span>&rdquo;. Check the spelling, try a shorter name, or clear the search to see everything.</p>
+          <div class="btn-group">
+            <button class="btn btn-blue btn-sm" type="button" id="reset-filters">Clear Search</button>
+            <a class="btn btn-outline btn-sm" data-wa="requirement">Ask Our Team</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Bottom CTA ===== -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container reveal">
+        <h2 id="cta-title">Not Sure Which Product You Need?</h2>
+        <p>Share your application requirements with our team. We will help you identify suitable options.</p>
+        <div class="btn-group">
+          <a class="btn btn-gold btn-float" data-wa="requirement"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Discuss Your Requirement</a>
+          <a class="btn btn-outline-light btn-float" href="assets/documents/Ponmatha_Chemicals_Brochure_Final.pdf" download><i class="fa-solid fa-download" aria-hidden="true"></i> Download Brochure</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+</body>
+</html>

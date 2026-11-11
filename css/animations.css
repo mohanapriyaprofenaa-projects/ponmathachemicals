@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Ponmatha Chemicals – animations (all disabled by prefers-reduced-motion)
+   ========================================================================== */
+
+/* Gentle floating motion on primary CTAs (3.6s loop, 6px travel) */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.btn-float { animation: float-y 3.6s ease-in-out infinite; }
+.btn-float:hover { animation-play-state: paused; }
+
+/* WhatsApp pulse */
+@keyframes wa-pulse {
+  0% { box-shadow: 0 8px 22px rgba(0,0,0,.3), 0 0 0 0 rgba(37, 211, 102, .55); }
+  70% { box-shadow: 0 8px 22px rgba(0,0,0,.3), 0 0 0 18px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 8px 22px rgba(0,0,0,.3), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+.wa-float { animation: wa-pulse 2.4s infinite; }
+
+/* Scroll reveal: quiet fade, applied only to section headings and key blocks */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal.delay-1 { transition-delay: .08s; }
+.reveal.delay-2 { transition-delay: .16s; }
+.reveal.delay-3 { transition-delay: .24s; }
+
+/* Hero entrance: one orchestrated moment on page load */
+@keyframes hero-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.hero-copy > * { animation: hero-in .8s var(--ease) both; }
+.hero-copy > *:nth-child(2) { animation-delay: .1s; }
+.hero-copy > *:nth-child(3) { animation-delay: .2s; }
+.hero-copy > *:nth-child(4) { animation-delay: .3s; }
+.hero-visual { animation: hero-in 1s var(--ease) .25s both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}

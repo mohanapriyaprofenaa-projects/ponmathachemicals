@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Ponmatha Chemicals – responsive rules
+   Desktop 1440+ (base) · Laptop 1024–1366 · Tablet 768–1023 · Mobile 320–767
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .cat-grid { grid-template-columns: repeat(3, 1fr); }
+  .ind-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---- Tablet and below: hamburger navigation ---- */
+@media (max-width: 960px) {
+  :root { --header-h: 70px; }
+  .brand-logo img { height: 52px; }
+  .nav-toggle { display: block; }
+  .primary-nav {
+    position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: #fff; padding: 18px 24px 32px;
+    overflow-y: auto; transform: translateY(-12px); opacity: 0; visibility: hidden;
+    transition: opacity .25s var(--ease), transform .25s var(--ease), visibility .25s;
+  }
+  .primary-nav.is-open { transform: none; opacity: 1; visibility: visible; }
+  .nav-list { flex-direction: column; align-items: stretch; gap: 0; }
+  .nav-link { padding: 16px 6px; font-size: 1.08rem; border-bottom: 1px solid var(--line); }
+  .nav-link::after { left: 6px; right: auto; width: 46px; bottom: 10px; }
+  .nav-cta-item { margin: 22px 0 0; }
+  .nav-cta-item .btn { width: 100%; }
+
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { max-width: 560px; }
+  .hero-badge { left: 14px; }
+  .split, .brochure-card, .doc-panel, .contact-grid, .mv-grid { grid-template-columns: 1fr; }
+  .split.reverse .split-media { order: 0; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid .why-card:nth-child(4) { grid-column: auto; }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .value:nth-child(2) { border-right: 0; }
+  .value:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.16); }
+  .catalogue-toolbar { position: static; }
+  .catalogue-category { scroll-margin-top: calc(var(--header-h) + 16px); }
+}
+
+@media (max-width: 767px) {
+  body { font-size: .98rem; }
+  .container { width: min(1200px, 100% - 32px); }
+  .brand-text strong { font-size: .95rem; }
+  .brand-text small { font-size: .66rem; }
+  .brand { gap: 10px; }
+  .brand-logo img { height: 46px; }
+  .hero-stats-grid { grid-template-columns: 1fr; }
+  .stat { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); padding: 16px; display: flex; align-items: baseline; justify-content: center; gap: 12px; }
+  .stat:last-child { border-bottom: 0; }
+  .hero::before { width: 320px; height: 320px; right: -120px; top: -130px; }
+  .hero-badge { position: static; margin-top: -26px; margin-left: 16px; max-width: 260px; }
+  .cat-grid, .why-grid, .ind-grid, .resp-grid, .form-grid, .machine-stats, .pill-row { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr; }
+  .form-grid .field.full { grid-column: auto; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .value { padding: 24px 10px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; padding: 44px 0 30px; }
+  .footer-bottom-inner { flex-direction: column; text-align: center; }
+  .btn-group .btn { flex: 1 1 100%; }
+  .category-cta { flex-direction: column; align-items: stretch; text-align: left; }
+  .category-cta .btn { width: 100%; }
+  .category-banner { min-height: 200px; }
+  .category-banner-text { padding: 20px; }
+  .search-row { flex-direction: column; align-items: stretch; }
+  .map-wrap iframe { height: 320px; }
+  .map-bar { flex-direction: column; align-items: stretch; text-align: center; }
+  .doc-ref b { min-width: 84px; }
+  .wa-float { right: 16px; bottom: 16px; width: 56px; height: 56px; font-size: 1.8rem; }
+  .to-top { right: 22px; bottom: 84px; }
+  .wa-tip { display: none; }
+  .pdf-chip { right: 6px; }
+}
+
+@media (max-width: 380px) {
+  .brand-text small { display: none; }
+  .values-grid { grid-template-columns: 1fr; }
+  .value { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.16); }
+  .why-card, .resp-card, .info-card { flex-direction: column; }
+}
+
+/* Keep the sticky footer content from sitting under the floating WhatsApp button */
+@media (max-width: 767px) { .site-footer { padding-bottom: 8px; } }
+
+/* ---- v2 additions ---- */
+@media (max-width: 960px) {
+  .ph-split, .ph-contact-grid, .why-split { grid-template-columns: 1fr; }
+  .ph-frame { max-width: 520px; margin-right: 18px; }
+  .why-split .photo { aspect-ratio: 16 / 9; }
+  .chips { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .glass-row { grid-template-columns: 1fr; border-radius: 14px 14px 0 0; }
+  .glass-row div { display: flex; justify-content: center; align-items: baseline; gap: 10px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.18); padding: 10px; }
+  .glass-row div:last-child { border-bottom: 0; }
+  .ph-tags li { font-size: .76rem; padding: 5px 11px; }
+  .quick-card { padding: 18px; }
+  .search-row { flex-direction: column; align-items: stretch; }
+  .search-row .btn { width: 100%; }
+  .chip { min-height: 44px; font-size: .76rem; padding: 8px 10px; }
+  .cat-media { aspect-ratio: 16 / 8; }
+}
