@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Discount offer popup – css/offer-popup.css
+   Uses the CSS variables from style.css (load style.css first)
+   ========================================================================== */
+.offer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(23, 38, 77, .72);
+  opacity: 0;
+  transition: opacity .25s var(--ease);
+  overflow-y: auto;
+}
+
+.offer-overlay[hidden] {
+  display: none;
+}
+
+.offer-overlay.is-open {
+  opacity: 1;
+}
+
+body.offer-open {
+  overflow: hidden;
+}
+
+.offer-dialog {
+  position: relative;
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  width: min(900px, 100%);
+  max-height: calc(100vh - 32px);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(18px) scale(.97);
+  transition: transform .3s var(--ease);
+  outline: none;
+}
+
+.offer-overlay.is-open .offer-dialog {
+  transform: none;
+}
+
+.offer-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(23, 38, 77, .08);
+  color: var(--navy);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.offer-close:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+.offer-side {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 30px 28px;
+  color: #D5DDF3;
+  background: linear-gradient(160deg, var(--blue) 0%, var(--navy) 100%);
+  overflow: hidden;
+}
+
+.offer-side::before {
+  content: '';
+  position: absolute;
+  right: -90px;
+  bottom: -90px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 3px solid rgba(181, 148, 16, .55);
+}
+
+.offer-side>* {
+  position: relative;
+}
+
+.offer-brand {
+  margin: 0 0 14px;
+  font: 700 .85rem var(--font-head);
+  letter-spacing: .06em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.offer-kicker {
+  margin: 0;
+  font: 600 .8rem var(--font-head);
+  color: var(--gold-soft);
+}
+
+.offer-side .offer-percent {
+  margin: 2px 0 6px;
+  font: 700 4rem/1 var(--font-head);
+  color: var(--gold-soft);
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.offer-percent span {
+  font-size: 2rem;
+  margin-top: 6px;
+}
+
+.offer-percent small {
+  font-size: 1rem;
+  align-self: flex-end;
+  margin: 0 0 8px 8px;
+  color: #fff;
+  letter-spacing: .08em;
+}
+
+.offer-side h2 {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.offer-side p {
+  font-size: .88rem;
+  margin: 0 0 12px;
+}
+
+.offer-points {
+  display: grid;
+  gap: 6px;
+  font-size: .86rem;
+  color: #fff;
+}
+
+.offer-points i {
+  color: var(--gold-soft);
+  margin-right: 8px;
+}
+
+.offer-form {
+  padding: 26px 28px 22px;
+  overflow-y: auto;
+  font-size: .9rem;
+}
+
+.offer-form h3 {
+  font-size: 1.05rem;
+  margin: 0 28px 14px 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--light-gold);
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+  margin-bottom: 14px;
+}
+
+.offer-form .field {
+  gap: 4px;
+}
+
+.offer-form .field label {
+  font-size: .8rem;
+}
+
+.offer-form .field input,
+.offer-form .field select,
+.offer-form .field textarea {
+  min-height: 40px;
+  padding: 8px 12px;
+  font-size: .88rem;
+  border-radius: 8px;
+}
+
+.offer-form .field textarea {
+  min-height: 62px;
+}
+
+.offer-form .field-error {
+  font-size: .76rem;
+}
+
+.offer-form .field-error:empty {
+  display: none;
+}
+
+.offer-form .btn {
+  width: 100%;
+}
+
+.offer-form .form-status {
+  margin-top: 10px;
+  font-size: .86rem;
+}
+
+.offer-note {
+  margin: 10px 0 0;
+  font-size: .76rem;
+  color: var(--grey);
+}
+
+@media (max-width: 767px) {
+  .offer-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .offer-dialog {
+    grid-template-columns: 1fr;
+    max-height: 94vh;
+    overflow-y: auto;
+    border-radius: 18px 18px 0 0;
+    width: 100%;
+  }
+
+  .offer-side {
+    padding: 20px 20px 16px;
+    flex-direction: column;
+  }
+
+  .offer-brand {
+    margin-bottom: 6px;
+  }
+
+  .offer-side .offer-percent {
+    font-size: 2.6rem;
+  }
+
+  .offer-percent span {
+    font-size: 1.4rem;
+  }
+
+  .offer-points {
+    display: none;
+  }
+
+  .offer-side p {
+    margin-bottom: 0;
+  }
+
+  .offer-form {
+    padding: 18px 20px 20px;
+    overflow: visible;
+  }
+
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-close {
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+  }
+
+  .offer-form h3 {
+    margin-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .offer-overlay,
+  .offer-dialog {
+    transition: none;
+  }
+}

@@ -387,10 +387,12 @@ mark {
 .photo-wide {
   aspect-ratio: 16 / 10;
 }
-.logoimg{
+
+.logoimg {
   object-fit: contain !important;
   object-position: center !important;
 }
+
 /* ---------- Header ---------- */
 .site-header {
   position: sticky;
@@ -2485,3 +2487,6 @@ mark {
 #contact-form {
   scroll-margin-top: calc(var(--header-h) + 16px);
 }
+
+
+
